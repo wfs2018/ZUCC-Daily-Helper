@@ -19,11 +19,11 @@ def signer():
     driver.get('http://yqdj.zucc.edu.cn/feiyan_api/h5/html/daka/daka.html')
 
     driver.implicitly_wait(20)
-    print(os.environ["SCHOOL_ID"])
-    print(os.environ["PASSWORD"])
 
     driver.find_element_by_css_selector("#username").send_keys(os.environ["SCHOOL_ID"])
     driver.find_element_by_css_selector("#password").send_keys(os.environ["PASSWORD"])
+    print(driver.find_element_by_css_selector("#username").get_attribute("value"))
+    print(driver.find_element_by_css_selector("#password").get_attribute("value"))
     driver.find_element_by_css_selector(".btn-submit").click()
 
     sign = '''

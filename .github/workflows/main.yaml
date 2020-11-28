@@ -29,7 +29,8 @@ jobs:
             && sudo chmod +x /usr/local/bin/chromedriver \
             && chromedriver --version
       - name: "Sign"
-        run: python main.py
         env:
           SCHOOL_ID: ${{ secrets.SCHOOL_ID }}
           PASSWORD: ${{ secrets.PASSWORD }}
+        run: python main.py
+

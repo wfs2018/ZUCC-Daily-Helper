@@ -11,8 +11,8 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
 
-driver = webdriver.Chrome('D:\\Program\\Environment\\WebDriver\\chromedriver.exe')
-# driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=chrome_options)
+# driver = webdriver.Chrome('D:\\Program\\Environment\\WebDriver\\chromedriver.exe')
+driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=chrome_options)
 driver.maximize_window()
 driver.get('http://yqdj.zucc.edu.cn/feiyan_api/h5/html/daka/daka.html')
 

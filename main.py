@@ -3,7 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome('D:\\Program\\Environment\\WebDriver\\chromedriver.exe')
+driver = webdriver.Chrome('/usr/bin/chromedriver')
 driver.maximize_window()
 driver.get('http://yqdj.zucc.edu.cn/feiyan_api/h5/html/daka/daka.html')
 

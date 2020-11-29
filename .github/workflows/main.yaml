@@ -1,7 +1,10 @@
-name: "GitHub Actions Sign"
+name: "ZUCC Auto Clock In"
 
 on:
   workflow_dispatch:
+  fork:
+  schedule:
+    - cron: '0 7 * * *'
 
 jobs:
   bot:
@@ -28,7 +31,7 @@ jobs:
             && sudo mv chromedriver /usr/local/bin/chromedriver \
             && sudo chmod +x /usr/local/bin/chromedriver \
             && chromedriver --version
-      - name: "Sign"
+      - name: "Clock In"
         env:
           SCHOOL_ID: ${{ secrets.SCHOOL_ID }}
           PASSWORD: ${{ secrets.PASSWORD }}

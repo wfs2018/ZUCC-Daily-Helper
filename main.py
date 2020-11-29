@@ -1,9 +1,6 @@
 import os
 import time
 from selenium import webdriver
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 chrome_options = Options()
@@ -11,17 +8,14 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
 
-# driver = webdriver.Chrome('D:\\Program\\Environment\\WebDriver\\chromedriver.exe')
 driver = webdriver.Chrome('/usr/bin/chromedriver', chrome_options=chrome_options)
 
 
-def signer():
+def clockIn():
     driver.maximize_window()
     driver.get('http://yqdj.zucc.edu.cn/feiyan_api/h5/html/daka/daka.html')
 
     driver.implicitly_wait(120)
-    # driver.find_element_by_css_selector("#username").send_keys(31801136)
-    # driver.find_element_by_css_selector("#password").send_keys('31421X')
     driver.find_element_by_css_selector("#username").send_keys(os.environ["SCHOOL_ID"])
     driver.find_element_by_css_selector("#password").send_keys(os.environ["PASSWORD"])
     driver.find_element_by_css_selector(".btn-submit").click()
@@ -43,7 +37,7 @@ def signer():
         document.querySelector(".examen-box > div.content-block.submit-box > a").click()
     '''
 
-    time.sleep(10)
+    time.sleep(20)
     isSigned = driver.execute_script(
         '''return document.querySelector(".examen-box > div.content-block.submit-box > a") == null''')
 
@@ -55,5 +49,5 @@ def signer():
 
 
 if __name__ == '__main__':
-    signer()
-    # driver.close()
+    clockIn()
+    driver.close()

@@ -2,7 +2,6 @@ name: "ZUCC Auto Clock In"
 
 on:
   workflow_dispatch:
-  fork:
   schedule:
     - cron: '0 7 * * *'
 

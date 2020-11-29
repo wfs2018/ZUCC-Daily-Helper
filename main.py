@@ -43,8 +43,7 @@ def signer():
         document.querySelector(".examen-box > div.content-block.submit-box > a").click()
     '''
 
-    locator = (By.CSS_SELECTOR, ".examen-box > div")
-    WebDriverWait(driver, 120, 0.5).until(EC.presence_of_all_elements_located(locator))
+    driver.implicitly_wait(120)
     isSigned = driver.execute_script(
         '''return document.querySelector(".examen-box > div.content-block.submit-box > a") == null''')
 

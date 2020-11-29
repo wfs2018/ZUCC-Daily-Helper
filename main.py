@@ -43,7 +43,7 @@ def signer():
         document.querySelector(".examen-box > div.content-block.submit-box > a").click()
     '''
 
-    driver.implicitly_wait(120)
+    time.sleep(10)
     isSigned = driver.execute_script(
         '''return document.querySelector(".examen-box > div.content-block.submit-box > a") == null''')
 
